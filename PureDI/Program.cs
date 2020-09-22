@@ -1,6 +1,9 @@
-﻿using System;
+﻿// V2
+/*using System;
 using System.IO;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;*/
+
+using System.Security.Principal;
 
 namespace PureDI
 {
@@ -8,9 +11,11 @@ namespace PureDI
     {
         static void Main(string[] args)
         {
+            // V1
             // IMessageWriter writer = new ConsoleMessageWriter();
 
-            IConfigurationRoot configuration = new ConfigurationBuilder()
+            // V2
+            /*IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
@@ -18,7 +23,9 @@ namespace PureDI
             string typeName = configuration["messageWriter"];
             Type type = Type.GetType(typeName, throwOnError: true);
 
-            IMessageWriter writer = (IMessageWriter) Activator.CreateInstance(type);
+            IMessageWriter writer = (IMessageWriter) Activator.CreateInstance(type);*/
+
+            IMessageWriter writer = new SecureMessageWriter(new ConsoleMessageWriter(), WindowsIdentity.GetCurrent());
 
             var salutation = new Salutation(writer);
             salutation.Exclaim("Hello DI!");
