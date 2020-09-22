@@ -28,7 +28,7 @@ namespace PureDI
             IMessageWriter writer = new SecureMessageWriter(new ConsoleMessageWriter(), WindowsIdentity.GetCurrent());
 
             var salutation = new Salutation(writer);
-            salutation.Exclaim("Hello DI!");
+            salutation.Exclaim();
         }
     }
 }

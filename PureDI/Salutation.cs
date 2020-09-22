@@ -11,9 +11,9 @@ namespace PureDI
             _writer = writer ?? throw new ArgumentNullException(nameof(writer));
         }
 
-        public void Exclaim(string message)
+        public void Exclaim()
         {
-            _writer.Write(message);
+            _writer.Write("Hello DI!");
         }
     }
 }

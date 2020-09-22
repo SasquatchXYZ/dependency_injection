@@ -14,10 +14,10 @@ namespace PureDI.Tests
             var sut = new Salutation(writer);
 
             // Act
-            sut.Exclaim("Hello DI Tests!");
+            sut.Exclaim();
 
             // Assert
-            Assert.Equal(expected: "Hello DI Tests!", actual: writer.WrittenMessage);
+            Assert.Equal(expected: "Hello DI!", actual: writer.WrittenMessage);
         }
     }
 }
