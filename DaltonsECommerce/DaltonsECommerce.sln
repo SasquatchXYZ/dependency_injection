@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dalton.SqlAccess", "Dalton.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dalton.DomainLogic", "Dalton.DomainLogic\Dalton.DomainLogic.csproj", "{436B02FD-DB5B-465A-A4C4-D66A882B22D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dalton.ECommerce.WebUI", "Dalton.ECommerce.WebUI\Dalton.ECommerce.WebUI.csproj", "{F4D2C07A-C9A9-4038-BFDE-CB48D0DE680F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{436B02FD-DB5B-465A-A4C4-D66A882B22D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{436B02FD-DB5B-465A-A4C4-D66A882B22D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{436B02FD-DB5B-465A-A4C4-D66A882B22D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4D2C07A-C9A9-4038-BFDE-CB48D0DE680F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4D2C07A-C9A9-4038-BFDE-CB48D0DE680F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4D2C07A-C9A9-4038-BFDE-CB48D0DE680F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4D2C07A-C9A9-4038-BFDE-CB48D0DE680F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
