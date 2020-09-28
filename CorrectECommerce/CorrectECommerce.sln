@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce.Web", "Commerce.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce.Domain", "Commerce.Domain\Commerce.Domain.csproj", "{225B0E85-C874-4F5C-933D-8B6839F36443}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce.SqlDataAccess", "Commerce.SqlDataAccess\Commerce.SqlDataAccess.csproj", "{88E09D2E-CE78-4948-98EF-C5ECEA2C3899}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{225B0E85-C874-4F5C-933D-8B6839F36443}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{225B0E85-C874-4F5C-933D-8B6839F36443}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{225B0E85-C874-4F5C-933D-8B6839F36443}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E09D2E-CE78-4948-98EF-C5ECEA2C3899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E09D2E-CE78-4948-98EF-C5ECEA2C3899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E09D2E-CE78-4948-98EF-C5ECEA2C3899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E09D2E-CE78-4948-98EF-C5ECEA2C3899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
