@@ -12,12 +12,12 @@ namespace Commerce.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        // private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger, IProductService productService)
+        public HomeController(/*ILogger<HomeController> logger, */IProductService productService)
         {
-            _logger = logger;
+            // _logger = logger;
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
         }
 
