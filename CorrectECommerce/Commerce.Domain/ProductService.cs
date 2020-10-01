@@ -17,7 +17,8 @@ namespace Commerce.Domain
 
         public IEnumerable<DiscountedProduct> GetFeaturedProducts()
         {
-            return from product in _repository.GetFeaturedProducts()
+            return
+                from product in _repository.GetFeaturedProducts()
                 select product.ApplyDiscountFor(_userContext);
         }
     }

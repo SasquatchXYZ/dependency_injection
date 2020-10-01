@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +25,14 @@ namespace Commerce.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            var appSettings = Configuration.GetSection("AppSettings");
+
+            var controllerActivator = new CommerceControllerActivator(
+                configuration: new CommerceConfiguration(connectionString: Configuration.GetConnectionString("CommerceConnectionString"),
+                    productRepositoryTypeName: appSettings.GetValue<string>("ProductRepositoryType")));
+
+            services.AddSingleton<IControllerActivator>(controllerActivator);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
