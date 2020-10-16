@@ -10,5 +10,9 @@ namespace Commerce.Domain
         {
             Code = code ?? throw new ArgumentNullException(nameof(code));
         }
+
+        public static readonly Currency Dollar = new Currency("USD");
+        public static readonly Currency Euro = new Currency("EUR");
+        public static readonly Currency Pound = new Currency("GBP");
     }
 }

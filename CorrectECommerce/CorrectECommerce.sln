@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce.Domain", "Commerce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce.SqlDataAccess", "Commerce.SqlDataAccess\Commerce.SqlDataAccess.csproj", "{88E09D2E-CE78-4948-98EF-C5ECEA2C3899}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce.UpdateCurrency", "Commerce.UpdateCurrency\Commerce.UpdateCurrency.csproj", "{BA0667A2-3AA2-43C3-AB89-B3F2944AD8C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commerce.UpdateCurrency.ApplicationServices", "Commerce.UpdateCurrency.ApplicationServices\Commerce.UpdateCurrency.ApplicationServices.csproj", "{46B47B87-E913-4CA7-9EC7-FD8B3BFC7A37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{88E09D2E-CE78-4948-98EF-C5ECEA2C3899}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88E09D2E-CE78-4948-98EF-C5ECEA2C3899}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88E09D2E-CE78-4948-98EF-C5ECEA2C3899}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA0667A2-3AA2-43C3-AB89-B3F2944AD8C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0667A2-3AA2-43C3-AB89-B3F2944AD8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0667A2-3AA2-43C3-AB89-B3F2944AD8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0667A2-3AA2-43C3-AB89-B3F2944AD8C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46B47B87-E913-4CA7-9EC7-FD8B3BFC7A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B47B87-E913-4CA7-9EC7-FD8B3BFC7A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B47B87-E913-4CA7-9EC7-FD8B3BFC7A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B47B87-E913-4CA7-9EC7-FD8B3BFC7A37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

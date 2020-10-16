@@ -16,6 +16,7 @@ namespace Commerce.SqlDataAccess
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<ExchangeRate> ExchangeRates { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
