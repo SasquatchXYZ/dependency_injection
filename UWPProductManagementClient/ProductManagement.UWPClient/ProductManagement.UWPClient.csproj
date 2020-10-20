@@ -119,6 +119,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converters\DecimalValueConverter.cs" />
+    <Compile Include="CrossCuttingConcerns\CircuitBreaker.cs" />
+    <Compile Include="CrossCuttingConcerns\CircuitBreakerExtensions.cs" />
+    <Compile Include="CrossCuttingConcerns\CircuitBreakerProductRepositoryDecorator.cs" />
+    <Compile Include="CrossCuttingConcerns\ClosedCircuitState.cs" />
+    <Compile Include="CrossCuttingConcerns\HalfOpenCircuitState.cs" />
+    <Compile Include="CrossCuttingConcerns\ICircuitBreaker.cs" />
+    <Compile Include="CrossCuttingConcerns\ICircuitState.cs" />
+    <Compile Include="CrossCuttingConcerns\OpenCircuitState.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -153,6 +162,16 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.10</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProductManagement.Domain\ProductManagement.Domain.csproj">
+      <Project>{aad041ab-2265-465e-9325-02b168b09836}</Project>
+      <Name>ProductManagement.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProductManagement.PresentationLogic\ProductManagement.PresentationLogic.csproj">
+      <Project>{db9349ec-4a5d-449e-950d-c8f8839b02b1}</Project>
+      <Name>ProductManagement.PresentationLogic</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
