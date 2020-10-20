@@ -19,6 +19,6 @@ namespace ProductManagement.PresentationLogic.UICommands
 
         public event EventHandler CanExecuteChanged;
         public bool CanExecute(object parameter) => true;
-        public virtual void Execute(object paramter) => _execute(paramter);
+        public virtual void Execute(object parameter) => _execute(parameter);
     }
 }
