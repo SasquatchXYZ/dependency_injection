@@ -6,7 +6,7 @@ using ProductManagement.Domain;
 
 namespace ProductManagement.DataAccess
 {
-    class FakeProductRepository : IProductRepository
+    public class FakeProductRepository : IProductRepository
     {
         private readonly Dictionary<Guid, string> _products = new Dictionary<Guid, string>();
 

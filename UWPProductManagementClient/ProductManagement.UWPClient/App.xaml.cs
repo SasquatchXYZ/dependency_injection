@@ -16,6 +16,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using ProductManagement.Domain;
 using ProductManagement.PresentationLogic;
+using ProductManagement.UWPClient.CrossCuttingConcerns;
+using ProductManagement.DataAccess;
+using ProductManagement.PresentationLogic.ViewModels;
 
 namespace ProductManagement.UWPClient
 {
@@ -26,6 +29,7 @@ namespace ProductManagement.UWPClient
     {
         private readonly INavigationService _navigationService;
         private readonly IProductRepository _productRepository;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -36,7 +40,10 @@ namespace ProductManagement.UWPClient
             this.Suspending += OnSuspending;
 
             this._navigationService = this;
-
+            this._productRepository =
+                new CircuitBreakerProductRepositoryDecorator(
+                    new CircuitBreaker(TimeSpan.FromMinutes(1)),
+                    new FakeProductRepository());
         }
 
         /// <summary>
@@ -46,7 +53,15 @@ namespace ProductManagement.UWPClient
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
+            if (Window.Current.Content == null)
+            {
+                Window.Current.Content = new Frame();
+                Window.Current.Activate();
+
+                this.NavigateTo<MainViewModel>();
+            }
+
+            /*Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -75,8 +90,47 @@ namespace ProductManagement.UWPClient
                     // parameter
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
+
                 // Ensure the current window is active
                 Window.Current.Activate();
+            }*/
+        }
+
+        public void NavigateTo<TViewModel>(Action whenDone = null, object model = null) where TViewModel : IViewModel
+        {
+            Page page = this.CreatePage(typeof(TViewModel));
+            var viewModel = (IViewModel) page.DataContext;
+
+            viewModel.Initialize(whenDone, model);
+
+            var frame = (Frame) Window.Current.Content;
+            frame.Content = page;
+        }
+
+        private Page CreatePage(Type viewModelType)
+        {
+            if (viewModelType == typeof(MainViewModel))
+            {
+                return new MainPage(
+                    new MainViewModel(
+                        this._navigationService,
+                        this._productRepository));
+            }
+            else if (viewModelType == typeof(EditProductViewModel))
+            {
+                return new EditProductPage(
+                    new EditProductViewModel(
+                        this._productRepository));
+            }
+            else if (viewModelType == typeof(NewProductViewModel))
+            {
+                return new NewProductPage(
+                    new NewProductViewModel(
+                        this._productRepository));
+            }
+            else
+            {
+                throw new InvalidOperationException($"Unknown view model: {viewModelType}");
             }
         }
 

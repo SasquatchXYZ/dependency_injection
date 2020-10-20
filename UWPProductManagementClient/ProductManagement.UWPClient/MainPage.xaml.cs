@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ProductManagement.PresentationLogic.ViewModels;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,9 +23,13 @@ namespace ProductManagement.UWPClient
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public MainPage()
+        public MainPage(MainViewModel vm)
         {
+            if (vm == null) throw new ArgumentNullException(nameof(vm));
+
             this.InitializeComponent();
+
+            this.DataContext = vm;
         }
     }
 }

@@ -131,6 +131,12 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditProductPage.xaml.cs">
+      <DependentUpon>EditProductPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewProductPage.xaml.cs">
+      <DependentUpon>NewProductPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +163,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="NewProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EditProductPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
@@ -164,6 +178,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ProductManagement.DataAccess\ProductManagement.DataAccess.csproj">
+      <Project>{ad6958a5-6ee8-4469-b755-4af6dee44fc1}</Project>
+      <Name>ProductManagement.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProductManagement.Domain\ProductManagement.Domain.csproj">
       <Project>{aad041ab-2265-465e-9325-02b168b09836}</Project>
       <Name>ProductManagement.Domain</Name>
